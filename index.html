@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="relative bg-light-grayish-cyan">
+    <header class="p-10 max-lg:p-5">
+      <div class="flex items-center justify-center">
+        <a class="z-50" href="/">
+          <svg class="icon | size-24">
+            <use xlink:href="images/icons.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main
+      class="absolute max-lg:static inset-0 flex items-center justify-center font-space-mono"
+    >
+      <div
+        class="flex items-center justify-center max-lg:flex-col max-w-[920px] gap-11 max-lg:gap-7 bg-white p-8 max-lg:p-6 rounded-3xl"
+      >
+        <section class="lg:w-1/2 max-sm:max-w-[310px] lg:p-8">
+          <form class="relative flex flex-col gap-2 mb-9">
+            <div class="flex justify-between items-center">
+              <label class="font-bold text-dark-grayish-cyan" for="bill"
+                >Bill</label
+              >
+              <p class="bill-error-msg | font-bold text-error hidden"></p>
+            </div>
+            <svg class="icon | absolute size-4 top-12 left-4">
+              <use xlink:href="images/icons.svg#icon-dollar"></use>
+            </svg>
+            <input
+              class="input | max-xs:max-w-1 py-2 px-5 bg-very-light-grayish-cyan rounded-md text-right text-2xl text-dark-cyan font-semibold placeholder:text-grayish-cyan placeholder:text-2xl placeholder:font-bold outline-primary caret-primary"
+              id="bill"
+              type="number"
+              inputmode="numeric"
+              min="0"
+              pattern="[0-9]*\.?[0-9]"
+              placeholder="0"
+            />
+          </form>
+          <div class="flex flex-col justify-center mb-9">
+            <h2 class="font-bold text-dark-grayish-cyan mb-4">Select Tip %</h2>
+            <div class="grid grid-cols-3 max-sm:grid-cols-2 gap-3 max-lg:gap-4">
+              <button class="btn" data-tip-percent="5">5%</button>
+              <button class="btn" data-tip-percent="10">10%</button>
+              <button class="btn" data-tip-percent="15">15%</button>
+              <button class="btn" data-tip-percent="25">25%</button>
+              <button class="btn" data-tip-percent="50">50%</button>
+              <input
+                class="input | max-lg:min-w-36 max-w-[7.5rem] py-2 bg-very-light-grayish-cyan text-2xl text-dark-cyan font-space-mono font-semibold outline-primary placeholder:text-2xl placeholder:text-dark-grayish-cyan text-center focus:text-right caret-primary focus:placeholder-transparent focus:px-2"
+                id="custom-input"
+                type="number"
+                inputmode="numeric"
+                min="0"
+                pattern="[0-9]*\.?[0-9]"
+                placeholder="Custom"
+              />
+              <p
+                class="tip-error-msg | col-span-2 font-bold text-error hidden"
+              ></p>
+            </div>
+          </div>
+          <form class="relative flex flex-col gap-2">
+            <div class="flex justify-between items-center">
+              <label class="font-bold text-dark-grayish-cyan" for="payers"
+                >Number of People</label
+              >
+              <p class="payers-error-msg | font-bold text-error hidden"></p>
+            </div>
+            <svg class="icon | absolute size-4 top-12 left-4">
+              <use xlink:href="images/icons.svg#icon-person"></use>
+            </svg>
+            <input
+              class="input | py-2 px-5 bg-very-light-grayish-cyan rounded-md text-right text-2xl text-dark-cyan font-semibold placeholder:text-grayish-cyan placeholder:text-2xl placeholder:font-bold outline-primary caret-primary inval"
+              id="payers"
+              type="number"
+              inputmode="numeric"
+              min="0"
+              pattern="[0-9]*\.?[0-9]"
+              placeholder="0"
+            />
+          </form>
+        </section>
+        <section
+          class="sm:w-full pt-[3.25rem] pb-10 px-10 bg-dark-cyan rounded-xl lg:w-1/2"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="text-white font-semibold">Tip Amount</h3>
+              <p class="text-sm font-semibold text-grayish-cyan">/ person</p>
+            </div>
+            <p class="text-primary text-5xl font-bold">
+              $<span id="tip-per-person">0.00</span>
+            </p>
+          </div>
+          <div class="flex justify-between items-center mt-12">
+            <div>
+              <h3 class="text-white font-semibold">Total</h3>
+              <p class="text-sm font-semibold text-grayish-cyan">/ person</p>
+            </div>
+            <p class="text-primary text-5xl font-bold">
+              $<span id="total-per-person">0.00</span>
+            </p>
+          </div>
+          <button
+            class="reset-btn | w-full mt-[8.25rem] text-xl font-bold py-3 rounded-md bg-reset-btn text-reset-color hover:bg-btn-hover hover:text-dark-cyan active:opacity-70"
+          >
+            RESET
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
