@@ -30,7 +30,7 @@ const handleInputError = (inputElem, errorMsgElem, errorMessage) => {
 
   errorMsg.textContent = errorMessage;
 
-  inputElem.classList.toggle("input-error", !!errorMessage);
+  inputElem.classList.toggle("input-error", errorMessage);
   errorMsg.classList.toggle("hidden", !errorMessage);
 };
 
